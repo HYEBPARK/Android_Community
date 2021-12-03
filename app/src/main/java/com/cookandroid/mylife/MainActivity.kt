@@ -21,13 +21,13 @@ class MainActivity : AppCompatActivity() {
         auth = Firebase.auth
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        binding.logoutBtn.setOnClickListener {
-
-            auth.signOut()
-
-            var intent = Intent(this, IntroActivity::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
-            startActivity(intent)
-        }
+//        binding.logoutBtn.setOnClickListener {
+//
+//            auth.signOut()
+//
+//            var intent = Intent(this, IntroActivity::class.java)
+//            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
+//            startActivity(intent)
+//        }
     }
 }
