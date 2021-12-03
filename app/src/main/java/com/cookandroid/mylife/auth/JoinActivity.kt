@@ -22,6 +22,11 @@ class JoinActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_join)
         auth = Firebase.auth
 
+        binding.backBtn.setOnClickListener {
+            var intent = Intent(this,IntroActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.creatAccount.setOnClickListener {
 
             var isGoToJoin = true
