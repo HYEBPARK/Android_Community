@@ -1,4 +1,4 @@
-package com.cookandroid.mylife.board
+package com.cookandroid.mylife.comment
 
 import android.graphics.Color
 import android.view.LayoutInflater
@@ -10,13 +10,13 @@ import android.widget.TextView
 import com.cookandroid.mylife.R
 import com.cookandroid.mylife.utils.FBAuth
 
-class BoardListLVAdapter(val boardList : MutableList<BoardModel>) : BaseAdapter() {
+class CommentLVAdapter(val commentList : MutableList<CommentModel>) :BaseAdapter() {
     override fun getCount(): Int {
-        return boardList.size
+        return commentList.size
     }
 
     override fun getItem(p0: Int): Any {
-        return boardList[p0]
+        return commentList[p0]
     }
 
     override fun getItemId(p0: Int): Long {
@@ -24,7 +24,6 @@ class BoardListLVAdapter(val boardList : MutableList<BoardModel>) : BaseAdapter(
     }
 
     override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
-
         var view = p1
 
         view = LayoutInflater.from(p2?.context).inflate(R.layout.board_list_item, p2, false)
@@ -32,16 +31,11 @@ class BoardListLVAdapter(val boardList : MutableList<BoardModel>) : BaseAdapter(
         val itemLinearLayoutView = view?.findViewById<LinearLayout>(R.id.itemLinearView)
 
         val title = view?.findViewById<TextView>(R.id.titleArea)
-        val content = view?.findViewById<TextView>(R.id.contentArea)
         val time = view?.findViewById<TextView>(R.id.timeArea)
 
-        if(boardList[p0].uid.equals(FBAuth.getUid())){
-            itemLinearLayoutView?.setBackgroundColor(Color.parseColor("#ffa500"))
-        }
 
-        title!!.text = boardList[p0].title
-        content!!.text = boardList[p0].content
-        time!!.text = boardList[p0].time
+        title!!.text = commentList[p0].commentTitle
+        time!!.text = commentList[p0].commentCreateTime
 
         return view!!
     }

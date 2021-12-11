@@ -6,18 +6,16 @@ import android.graphics.drawable.BitmapDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
-import android.util.Log
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.cookandroid.mylife.R
-import com.cookandroid.mylife.contentsList.BookmarkModel
 import com.cookandroid.mylife.databinding.ActivityBoardWriteBinding
 import com.cookandroid.mylife.utils.FBAuth
 import com.cookandroid.mylife.utils.FBRef
+import com.cookandroid.mylife.utils.GetDate
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import java.io.ByteArrayOutputStream
-import java.text.SimpleDateFormat
 import java.util.*
 
 
@@ -38,7 +36,7 @@ class BoardWriteActivity : AppCompatActivity() {
             val title = binding.titleArea.text.toString()
             val content = binding.contentArea.text.toString()
             val uid = FBAuth.getUid()
-            val time = getTime()
+            val time = GetDate.getTime()
 
             //firebase storage 에 올릴 사진의 이름을 저장하기 위해서
             //해당 게시글의 key 값을 받아야함.
@@ -90,15 +88,8 @@ class BoardWriteActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
 
         // 갤러리에서 선택한 이미지 가져온다.
-        if(resultCode == RESULT_OK && requestCode == 100){
+        if (resultCode == RESULT_OK && requestCode == 100) {
             binding.imageArea.setImageURI(data?.data)
         }
-    }
-
-    // 현재 날짜와 시간을 가져오는 함수
-    fun getTime() : String{
-        val currentDateTime = Calendar.getInstance().time
-        val dateFormat = SimpleDateFormat("yyyy.MM.dd HH:mm:ss", Locale.KOREA).format(currentDateTime)
-        return dateFormat
     }
 }
