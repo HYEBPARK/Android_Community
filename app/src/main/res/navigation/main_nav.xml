@@ -41,24 +41,7 @@
             android:id="@+id/action_bookmarkFragment_to_tipFragment"
             app:destination="@id/tipFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/storeFragment"
-        android:name="com.cookandroid.mylife.fragments.StoreFragment"
-        android:label="fragment_store"
-        tools:layout="@layout/fragment_store" >
-        <action
-            android:id="@+id/action_storeFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-        <action
-            android:id="@+id/action_storeFragment_to_talkFragment"
-            app:destination="@id/talkFragment" />
-        <action
-            android:id="@+id/action_storeFragment_to_bookmarkFragment"
-            app:destination="@id/bookmarkFragment" />
-        <action
-            android:id="@+id/action_storeFragment_to_tipFragment"
-            app:destination="@id/tipFragment" />
-    </fragment>
+
     <fragment
         android:id="@+id/talkFragment"
         android:name="com.cookandroid.mylife.fragments.TalkFragment"
@@ -77,6 +60,7 @@
             android:id="@+id/action_talkFragment_to_storeFragment"
             app:destination="@id/storeFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/tipFragment"
         android:name="com.cookandroid.mylife.fragments.TipFragment"
@@ -94,5 +78,24 @@
         <action
             android:id="@+id/action_tipFragment_to_talkFragment"
             app:destination="@id/talkFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/storeFragment"
+        android:name="com.cookandroid.mylife.fragments.StoreFragment"
+        android:label="fragment_store"
+        tools:layout="@layout/fragment_store" >
+        <action
+            android:id="@+id/action_storeFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_storeFragment_to_talkFragment"
+            app:destination="@id/talkFragment" />
+        <action
+            android:id="@+id/action_storeFragment_to_bookmarkFragment"
+            app:destination="@id/bookmarkFragment" />
+        <action
+            android:id="@+id/action_storeFragment_to_tipFragment"
+            app:destination="@id/tipFragment" />
     </fragment>
 </navigation>

@@ -7,8 +7,9 @@ class FBRef {
     companion object{
         private val database = Firebase.database
 
-        val category1 = database.getReference("contents1");
-        val category2 = database.getReference("contents2");
+        val category1 = database.getReference("contents1")
+        val category2 = database.getReference("contents2")
         val bookmarkRef = database.getReference("bookmark_list")
+        val boardRef = database.getReference("board")
     }
 }

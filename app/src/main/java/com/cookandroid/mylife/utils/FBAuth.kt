@@ -1,6 +1,8 @@
 package com.cookandroid.mylife.utils
 
 import com.google.firebase.auth.FirebaseAuth
+import java.text.SimpleDateFormat
+import java.util.*
 
 class FBAuth {
     companion object{
@@ -9,5 +11,7 @@ class FBAuth {
             auth = FirebaseAuth.getInstance()
             return auth.currentUser?.uid.toString()
         }
+
+
     }
 }
