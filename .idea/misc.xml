@@ -5,16 +5,23 @@
       <map>
         <entry key="..\:/CookAndroid/Project/MyLife/app/src/main/res/drawable/background_radius.xml" value="0.2" />
         <entry key="..\:/CookAndroid/Project/MyLife/app/src/main/res/drawable/background_radius_yellow.xml" value="0.26979166666666665" />
+        <entry key="..\:/CookAndroid/Project/MyLife/app/src/main/res/layout/activity_board_inside.xml" value="0.22083333333333333" />
+        <entry key="..\:/CookAndroid/Project/MyLife/app/src/main/res/layout/activity_board_write.xml" value="0.2" />
+        <entry key="..\:/CookAndroid/Project/MyLife/app/src/main/res/layout/activity_content_list.xml" value="0.2" />
+        <entry key="..\:/CookAndroid/Project/MyLife/app/src/main/res/layout/activity_content_show.xml" value="0.25364583333333335" />
+        <entry key="..\:/CookAndroid/Project/MyLife/app/src/main/res/layout/activity_contents_list.xml" value="0.264" />
         <entry key="..\:/CookAndroid/Project/MyLife/app/src/main/res/layout/activity_intro.xml" value="0.17255434782608695" />
         <entry key="..\:/CookAndroid/Project/MyLife/app/src/main/res/layout/activity_join.xml" value="0.264" />
         <entry key="..\:/CookAndroid/Project/MyLife/app/src/main/res/layout/activity_login.xml" value="0.25364583333333335" />
         <entry key="..\:/CookAndroid/Project/MyLife/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/CookAndroid/Project/MyLife/app/src/main/res/layout/activity_splash.xml" value="0.1793478260869565" />
+        <entry key="..\:/CookAndroid/Project/MyLife/app/src/main/res/layout/board_list_item.xml" value="0.23541666666666666" />
+        <entry key="..\:/CookAndroid/Project/MyLife/app/src/main/res/layout/content_rv_item.xml" value="0.12" />
         <entry key="..\:/CookAndroid/Project/MyLife/app/src/main/res/layout/fragment_bookmark.xml" value="0.2" />
         <entry key="..\:/CookAndroid/Project/MyLife/app/src/main/res/layout/fragment_home.xml" value="0.16" />
         <entry key="..\:/CookAndroid/Project/MyLife/app/src/main/res/layout/fragment_store.xml" value="0.2" />
-        <entry key="..\:/CookAndroid/Project/MyLife/app/src/main/res/layout/fragment_talk.xml" value="0.2" />
-        <entry key="..\:/CookAndroid/Project/MyLife/app/src/main/res/layout/fragment_tip.xml" value="0.2" />
+        <entry key="..\:/CookAndroid/Project/MyLife/app/src/main/res/layout/fragment_talk.xml" value="0.1" />
+        <entry key="..\:/CookAndroid/Project/MyLife/app/src/main/res/layout/fragment_tip.xml" value="0.1" />
         <entry key="..\:/CookAndroid/Project/MyLife/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.26979166666666665" />
         <entry key="..\:/CookAndroid/Project/MyLife/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.26979166666666665" />
       </map>
