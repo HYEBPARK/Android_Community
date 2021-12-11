@@ -1,9 +1,14 @@
 package com.cookandroid.mylife.board
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
+import android.widget.Button
 import android.widget.ImageView
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
 import com.bumptech.glide.Glide
 import com.cookandroid.mylife.R
@@ -20,14 +25,44 @@ class BoardInsideActivity : AppCompatActivity() {
 
     private val TAG = BoardInsideActivity::class.java.simpleName
     private lateinit var binding : ActivityBoardInsideBinding
+    private lateinit var key : String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_board_inside)
 
-        val key = intent.getStringExtra("key") // intent로 key 값을 받아옴
-        getBoardData(key.toString())
-        getImageData(key.toString())
+
+        binding.boardsettingIcon.setOnClickListener {
+            showDialog()
+        }
+
+        key = intent.getStringExtra("key").toString() // intent로 key 값을 받아옴
+        getBoardData(key)
+        getImageData(key)
+
+    }
+
+    // 게시글 수정 삭제 dialog
+    private fun showDialog(){
+        val mDialogView = LayoutInflater.from(this).inflate(R.layout.custom_dialog, null)
+        val mBuilder = AlertDialog.Builder(this)
+            .setView(mDialogView)
+            .setTitle("게시글 수정/삭제")
+
+        val alertDialog = mBuilder.show()
+
+        // 수정버튼
+        alertDialog.findViewById<Button>(R.id.editBtn)?.setOnClickListener {
+            val intent = Intent(this, BoardEditActivity::class.java)
+            intent.putExtra("key",key)
+            startActivity(intent)
+        }
+        // 삭제버튼
+        alertDialog.findViewById<Button>(R.id.removeBtn)?.setOnClickListener {
+            FBRef.boardRef.child(key).removeValue()
+            Toast.makeText(this,"삭제 완료",Toast.LENGTH_LONG).show()
+        }
 
     }
 
@@ -54,12 +89,15 @@ class BoardInsideActivity : AppCompatActivity() {
         val postListener = object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
 
-                Log.d(TAG, snapshot.toString())
-                val dataModel = snapshot.getValue(BoardModel::class.java)
-                Log.d(TAG, dataModel!!.title)
-                binding.titleArea.text= dataModel!!.title
-                binding.textArea.text = dataModel!!.content
-                binding.timeArea.text = dataModel!!.time
+                try{
+                    val dataModel = snapshot.getValue(BoardModel::class.java)
+                    binding.titleArea.text= dataModel!!.title
+                    binding.textArea.text = dataModel!!.content
+                    binding.timeArea.text = dataModel!!.time
+                }catch (e : Exception){
+
+                }
+
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -67,5 +105,9 @@ class BoardInsideActivity : AppCompatActivity() {
             }
         }
         FBRef.boardRef.child(key).addValueEventListener(postListener)
+
     }
+
+
+
 }
