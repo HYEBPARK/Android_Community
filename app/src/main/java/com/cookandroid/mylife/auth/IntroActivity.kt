@@ -33,6 +33,10 @@ class IntroActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.infoBtn.setOnClickListener {
+            val intent = Intent(this,InfoActivity::class.java)
+            startActivity(intent)
+        }
         binding.noAccountBtn.setOnClickListener {
             auth.signInAnonymously()
                 .addOnCompleteListener(this) { task ->
