@@ -42,18 +42,18 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@color/mainColor" />
+                android:background="@color/mainColor"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
 
         </LinearLayout>
 
@@ -79,6 +79,13 @@
                 android:src="@drawable/bottom_goodtip" />
 
             <ImageView
+                android:id="@+id/talkTap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/bottom_talk" />
+
+            <ImageView
                 android:id="@+id/bookmarkTap"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -91,13 +98,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:src="@drawable/bottom_store" />
-
-            <ImageView
-                android:id="@+id/talkTap"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/bottom_talk" />
 
         </LinearLayout>
 

@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyLife">
         <activity
-            android:name=".setting.SettingActivity"
+            android:name=".auth.InfoActivity"
             android:exported="true" />
         <activity
             android:name=".board.BoardEditActivity"

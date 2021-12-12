@@ -24,7 +24,7 @@
                     android:id="@+id/titleArea"
                     android:text="title"
                     android:textColor="@color/black"
-                    android:textSize="20sp"
+                    android:textSize="25sp"
                     android:textStyle="bold"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -47,13 +47,6 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:background="@color/black"
-                android:layout_height="0.5dp">
-
-            </LinearLayout>
-
             <TextView
                 android:id="@+id/timeArea"
                 android:text="time"
@@ -62,12 +55,23 @@
                 android:layout_margin="10dp"
                 android:layout_height="wrap_content"/>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:background="#999999"
+                android:layout_height="0.5dp">
+
+            </LinearLayout>
+
             <TextView
                 android:id="@+id/textArea"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_margin="20dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
                 android:textColor="@color/black"
+                android:textSize="20sp"
                 android:background="@drawable/background_radius"
                 android:padding="10dp"/>
 
@@ -78,6 +82,22 @@
                 android:layout_marginRight="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:background="#999999"
+                android:layout_height="0.5dp"/>
+
+            <TextView
+                android:textSize="15dp"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="댓글"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:background="#999999"
+                android:layout_height="0.5dp"/>
             <ListView
                 android:id="@+id/commentLV"
                 android:layout_width="match_parent"
@@ -96,9 +116,10 @@
             android:layout_marginLeft="10dp"
             android:layout_width="320dp"
             android:layout_height="match_parent"
-            android:background="@android:color/transparent"/>
+            android:background="@color/white"/>
 
         <ImageView
+            android:background="@color/white"
             android:id="@+id/commentBtn"
             android:src="@drawable/btnwrite"
             android:layout_width="wrap_content"
