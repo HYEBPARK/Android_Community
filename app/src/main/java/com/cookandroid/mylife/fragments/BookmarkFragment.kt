@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.databinding.DataBindingUtil.inflate
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -42,7 +43,7 @@ class BookmarkFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_bookmark, container, false)
+        binding = inflate(inflater, R.layout.fragment_bookmark, container, false)
 
 
         // 2. 사용자가 북마크한 정보를 다 가져온다.
@@ -61,12 +62,16 @@ class BookmarkFragment : Fragment() {
             it.findNavController().navigate(R.id.action_bookmarkFragment_to_homeFragment)
         }
 
-        binding.storeTap.setOnClickListener {
-            it.findNavController().navigate(R.id.action_bookmarkFragment_to_storeFragment)
+        binding.tipTap.setOnClickListener {
+            it.findNavController().navigate(R.id.action_bookmarkFragment_to_tipFragment)
         }
 
         binding.talkTap.setOnClickListener {
             it.findNavController().navigate(R.id.action_bookmarkFragment_to_talkFragment)
+        }
+
+        binding.storeTap.setOnClickListener {
+            it.findNavController().navigate(R.id.action_bookmarkFragment_to_storeFragment)
         }
 
 
@@ -78,7 +83,6 @@ class BookmarkFragment : Fragment() {
         val postListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 for (dataModel in dataSnapshot.children) {
-                    Log.d(TAG, dataModel.toString())
                     val item = dataModel.getValue(ContentModel::class.java)
 
                     if(bookmarkIdList.contains(dataModel.key.toString())){
@@ -112,7 +116,6 @@ class BookmarkFragment : Fragment() {
 
             override fun onCancelled(databaseError: DatabaseError) {
                 // Getting Post failed, log a message
-                Log.w("ContentListActivity", "loadPost:onCancelled", databaseError.toException())
             }
         }
         FBRef.bookmarkRef.child(FBAuth.getUid()).addValueEventListener(postListener)

@@ -27,8 +27,6 @@ class BookmarkRVAdapter(val context : Context,
     ): BookmarkRVAdapter.Viewholder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.content_rv_item, parent, false)
 
-        Log.d("BookmarkRVAdapter", keyList.toString())
-        Log.d("BookmarkRVAdapter", bookmarkIdList.toString())
         return Viewholder(v)
     }
 
@@ -45,7 +43,6 @@ class BookmarkRVAdapter(val context : Context,
         fun bindItems(item: ContentModel, key: String) {
 
             itemView.setOnClickListener {
-                Toast.makeText(context, item.title, Toast.LENGTH_LONG).show()
                 val intent = Intent(context, ContentShowActivity::class.java)
                 intent.putExtra("url", item.webUrl)
                 itemView.context.startActivity(intent)
