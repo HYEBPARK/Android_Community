@@ -42,7 +42,6 @@ class ContentRVAdapter(val context : Context,
         fun bindItems(item : ContentModel, key : String) {
 
             itemView.setOnClickListener {
-                Toast.makeText(context, item.title, Toast.LENGTH_LONG).show()
                 val intent = Intent(context, ContentShowActivity::class.java)
                 intent.putExtra("url", item.webUrl)
                 itemView.context.startActivity(intent)
@@ -60,7 +59,6 @@ class ContentRVAdapter(val context : Context,
 
             bookmarkArea.setOnClickListener {
                 Log.d("ContentRVAdapter", FBAuth.getUid())
-                Toast.makeText(context, key, Toast.LENGTH_LONG).show()
 
                 // 북마크가 있을 때 삭제
                 if(bookmarkIdList.contains(key)) {

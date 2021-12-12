@@ -31,6 +31,7 @@ class ContentListActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_content_list)
+        val database = Firebase.database
 
         val items = ArrayList<ContentModel>()
         val itemKeyList = ArrayList<String>()
@@ -38,7 +39,8 @@ class ContentListActivity : AppCompatActivity() {
         rvAdapter = ContentRVAdapter(baseContext, items, itemKeyList, bookmarkIdList)
 
         // Write a message to the database
-        val database = Firebase.database
+
+
 
         val category = intent.getStringExtra("category")
 
@@ -113,4 +115,6 @@ class ContentListActivity : AppCompatActivity() {
 
     }
 
+
+//
 }
