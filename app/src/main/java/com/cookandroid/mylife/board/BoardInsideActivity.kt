@@ -52,9 +52,10 @@ class BoardInsideActivity : AppCompatActivity() {
             insertComment(key)
         }
 
+
+        getCommentDate(key)
         commentAdapter = CommentLVAdapter(commentDataList)
         binding.commentLV.adapter = commentAdapter
-        getCommentDate(key)
     }
 
     fun getCommentDate(key: String) {
@@ -66,16 +67,16 @@ class BoardInsideActivity : AppCompatActivity() {
                 for (dataModel in snapshot.children) {
                     val item = dataModel.getValue(CommentModel::class.java)
                     commentDataList.add(item!!)
+                    Log.d("comment",item.toString())
                 }
 
                     commentAdapter.notifyDataSetChanged()
             }
 
             override fun onCancelled(error: DatabaseError) {
-                Log.w(TAG, "loadPost:onCancelled", error.toException())
             }
         }
-        FBRef.commentRef.addValueEventListener(postListener)
+        FBRef.commentRef.child(key).addValueEventListener(postListener)
     }
 
 
@@ -91,7 +92,7 @@ fun insertComment(key: String) {
                 GetDate.getTime()
             )
         ) // commentData
-
+    Toast.makeText(this, "댓글 입력 완료", Toast.LENGTH_SHORT).show()
     binding.commentArea.setText("")
 
 }
@@ -161,13 +162,10 @@ private fun getBoardData(key: String) {
         }
 
         override fun onCancelled(error: DatabaseError) {
-            Log.d(TAG, "load fail", error.toException())
         }
     }
     FBRef.boardRef.child(key).addValueEventListener(postListener)
 
 }
-
-
 
 }

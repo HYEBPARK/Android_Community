@@ -59,21 +59,20 @@ class TalkFragment : Fragment() {
             startActivity(intent)
         }
 
-        binding.tipTap.setOnClickListener{
-            it.findNavController().navigate(R.id.action_talkFragment_to_tipFragment)
-
+        binding.homeTap.setOnClickListener {
+            it.findNavController().navigate(R.id.action_talkFragment_to_homeFragment)
         }
 
-        binding.bookmarkTap.setOnClickListener{
+        binding.tipTap.setOnClickListener {
+            it.findNavController().navigate(R.id.action_talkFragment_to_tipFragment)
+        }
+
+        binding.bookmarkTap.setOnClickListener {
             it.findNavController().navigate(R.id.action_talkFragment_to_bookmarkFragment)
         }
 
-        binding.storeTap.setOnClickListener{
+        binding.storeTap.setOnClickListener {
             it.findNavController().navigate(R.id.action_talkFragment_to_storeFragment)
-        }
-
-        binding.homeTap.setOnClickListener{
-            it.findNavController().navigate(R.id.action_talkFragment_to_homeFragment)
         }
 
         getFBBoardDate()
